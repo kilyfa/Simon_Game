@@ -74,7 +74,11 @@ function GameArray() {
 
 function WrongSide() {
   $("#level-title").text("Wrong!! TRY AGAIN!!");
+  $("body").addClass("game-over");
   playSound("wrong");
+  setTimeout(() => {
+    $("body").removeClass("game-over");
+  }, 250);
   GamePattern = [];
   start = false;
 }
