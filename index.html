@@ -24,5 +24,13 @@
       </div>
     </div>
   </body>
-  <script></script>
+  <script>
+    $("div").on("click", function () {
+      var click_id = $(this).attr("id");
+      $("#" + click_id).addClass("pressed");
+      setTimeout(function () {
+        $("#" + click_id).removeClass("pressed");
+      }, 100);
+    });
+  </script>
 </html>
