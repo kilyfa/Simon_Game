@@ -4,8 +4,6 @@
     <meta charset="utf-8" />
     <title>Simon</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="game.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" />
   </head>
 
@@ -23,38 +21,7 @@
         <div type="button" id="blue" class="btn blue"></div>
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="game.js" charset="utf-8"></script>
   </body>
-  <script>
-    //Khusus Program
-    $(document).on("keypress", function (e) {
-      $("h1").text("Level " + GamePattern.length);
-      randomSequence(GamePattern.length);
-      $("#" + RandomChosen).removeClass(RandomChosen);
-      const soundProgram = new Audio("sounds/" + RandomChosen + ".mp3");
-      soundProgram.play();
-      setTimeout(function () {
-        $("#" + RandomChosen).addClass(RandomChosen);
-      }, 100);
-    });
-
-    //Bagian Penamaan
-  </script>
-  <script>
-    // Khusus User
-    const userClick = [];
-    $("div").on("click", function () {
-      var click_id = $(this).attr("id");
-      if (typeof click_id === "undefined") {
-      } else {
-        $("#" + click_id).addClass("pressed");
-        const sound = new Audio("sounds/" + click_id + ".mp3");
-        sound.play();
-        setTimeout(function () {
-          $("#" + click_id).removeClass("pressed");
-        }, 100);
-        userClick.push(click_id);
-        console.log(userClick);
-      }
-    });
-  </script>
 </html>
